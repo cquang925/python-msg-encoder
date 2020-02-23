@@ -1,11 +1,5 @@
-import csv
+from randomizer import characters
 
-master_key = open('key.csv', 'r')
-reader = csv.reader(master_key)
-
-characters = {}
-for row in reader:
-    characters[row[0]] = row[1]
 
 key_list = list(characters.keys())
 val_list = list(characters.values())

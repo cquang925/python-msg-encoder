@@ -10,14 +10,23 @@ encoded_text = []
 
 
 def encoder():
+    encoded_text.clear()  # clears the list to ensure it is empty
     sentence = input('Write a short sentence: ')
-    delimit = (splitter(sentence))  # split the sentence into single characters
+    delimit = (splitter(sentence))  # splits the sentence into single characters and creates a list
 
-    for letter in delimit:  # iterates through list uses dictionary to get value and append to encoded_text list
+    # iterates through delimit list and uses character dictionary to get values of characters.
+    # appends encoded_text with values
+    for letter in delimit:
         letter_num = characters.get(letter)
         encoded_text.append(letter_num)
 
-    print(encoded_text)
+    print(encoded_text, '\n')
+    save_message = input('Would you like to save message? (y/n)')
+    if save_message == 'y':
+        save_encoded_msg()
+        print('Message has been saved!\n')
+    else:
+        print('Message not saved. Returning to Main Menu.\n')
 
 
 #  saved encoded message to txt file

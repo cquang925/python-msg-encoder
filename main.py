@@ -1,44 +1,46 @@
-import encoder
-import decoder
+#!/usr/bin/env python3
+# Encoder encodes and decodes messages
+
+from encoder import encoder
+from decoder import user_msg, upload_msg
 import randomizer
+import pyinputplus as pyip
 
-print("**********Main Menu**********")
-print("""    1.Encode a message
-    2.Decode a message
-    3.Create key
-    4.View//Print key
-    5.Quit""")
-choice = input("What would you like to do: ")
+while True:
+    print('~~~~~~~~~~ Main Menu ~~~~~~~~~~')
+    choice = pyip.inputMenu(['Encode Message', 'Decode Message', 'Create Key', 'View/Print Key', 'Quit'], numbered=True)
 
-if choice == '1':
-    print()
-    randomizer.import_key()
-    encoder.encoder()
+    if choice == 'Encode Message':
+        print()
+        randomizer.import_key()
+        encoder()
 
-elif choice == '2':
-    print()
-    randomizer.import_key()
-    decoder.decoder()
+    elif choice == 'Decode Message':
+        print()
+        randomizer.import_key()
+        reply = pyip.inputChoice(['Key Message', 'Import Message'])
+        if reply == 'Key Message':
+            user_msg()
+        elif reply == 'Import Message':
+            upload_msg()
 
-elif choice == '3':
-    randomizer.randomize()
-    randomizer.save_key()
-    print('Key has been created successfully')
-    view_key = input('Would you like to view the key?(y/n) ')
-    if view_key == 'y':
-        print(randomizer.characters)
-    elif view_key == 'n':
-        print('Okie dokie')
+    elif choice == 'Create Key':
+        randomizer.randomize()
+        randomizer.save_key()
+        print('Key has been created successfully')
+        view_key = input('Would you like to view the key?(y/n)\n')
+        if view_key == 'y':
+            print(randomizer.characters, '\n')
+        elif view_key == 'n':
+            print('Returning to Main Menu \n')
 
-elif choice == '4':
-    randomizer.import_key()
-    randomizer.view_key()
+    elif choice == 'View/Print Key':
+        randomizer.import_key()
+        randomizer.view_key()
 
-elif choice == '5':
-    print('Good-bye. Have a good day!')
-
-else:
-    print('Invalid selection. Please select a valid option')
+    elif choice == 'Quit':
+        print('Have a good day! Good-bye.')
+        break
 
 # todo create try catch blocks to capture errors
-# todo create loop to return to main menu
+# todo check to see if character dictionary is empty

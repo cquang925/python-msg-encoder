@@ -13,3 +13,11 @@ encoder will code a message.
 decoder deciphers a message.
 randomizer creates a key.
 known bugs - need to create loop for main menu. need to catch errors for invalid user entries. need to clear list for encoder, after user initially inputs message.
+
+
+updatged 3/2/20
+added functionality to read/write files.
+created loop for main menu, so users will need to select exit.
+users can now import a coded messsage to be deciphered.
+users can save a coded message to file.
+fixed bug of list not clearing after entering a message.

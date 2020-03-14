@@ -24,7 +24,7 @@ fixed bug of list not clearing after entering a message.
 
 
 3/14/120
-added Try/Except blocks to catch exception errors
-added code to check if list and dictionaries are empty
-changed view of Main Menu
-changed view of View Key
+added Try/Except blocks to catch exception errors.
+added code to check if list and dictionaries are empty.
+changed view of Main Menu.
+changed view of View Key.

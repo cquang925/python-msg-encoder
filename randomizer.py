@@ -37,6 +37,7 @@ def import_key():
 
 
 def view_key():
-    print(characters)
+    for k, v in characters.items():
+        print(k + ' : ' + v)
    
 # todo create try/catch block to check if characters dictionary is empty

@@ -10,7 +10,10 @@ encoded_text = []
 
 
 def encoder():
-    encoded_text.clear()  # clears the list to ensure it is empty
+    if len(encoded_text) != 0:
+        encoded_text.clear()  # clears the list to ensure it is empty
+    else:
+        pass
     sentence = input('Write a short sentence: ')
     delimit = (splitter(sentence))  # splits the sentence into single characters and creates a list
 

@@ -21,3 +21,10 @@ created loop for main menu, so users will need to select exit.
 users can now import a coded messsage to be deciphered.
 users can save a coded message to file.
 fixed bug of list not clearing after entering a message.
+
+
+3/14/120
+added Try/Except blocks to catch exception errors
+added code to check if list and dictionaries are empty
+changed view of Main Menu
+changed view of View Key
